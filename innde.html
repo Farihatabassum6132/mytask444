@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Detection and Tracking Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>📦 TASK 4: Object Detection and Tracking</h1>
+            <p>Real-time video feed with bounding boxes, labels, and tracking IDs</p>
+        </header>
+
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <!-- Video / Simulation Screen -->
+            <div class="video-container">
+                <video id="webcam" autoplay playsinline muted></video>
+                <canvas id="overlayCanvas"></canvas>
+                <div class="status-badge" id="statusBadge">Model: Loading...</div>
+            </div>
+
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <h3>Control Panel</h3>
+                <button id="startBtn" onclick="startDetection()">Start Tracking</button>
+                <button id="stopBtn" onclick="stopDetection()" disabled>Stop Tracking</button>
+                
+                <div class="metrics">
+                    <h4>Detection Stats</h4>
+                    <p>Detected Objects: <span id="objectCount">0</span></p>
+                    <p>Active Tracking IDs: <span id="trackingIds">None</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
